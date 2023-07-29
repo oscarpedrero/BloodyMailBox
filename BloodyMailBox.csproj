@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>BloodyMailBox</AssemblyName>
+    <Description>Mod for Ticket Admin System</Description>
+    <Version>0.0.1</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be*" IncludeAssets="compile" />
+	  <PackageReference Include="BepInEx.Core" Version="6.0.0-be*" IncludeAssets="compile" />
+	  <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
+	  <PackageReference Include="VRising.Unhollowed.Client" Version="0.6.5.57575090" />
+	  <PackageReference Include="VRising.VampireCommandFramework" Version="0.8.0" />
+	  <PackageReference Include="VRising.Bloodstone" Version="0.1.*" />
+	  <PackageReference Include="Fody" Version="6.7.0" PrivateAssets="All" />
+	  <PackageReference Include="ILMerge.Fody" Version="1.24.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DB\" />
+    <Folder Include="Utils\" />
+  </ItemGroup>
+</Project>
