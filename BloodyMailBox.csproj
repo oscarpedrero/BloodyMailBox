@@ -4,7 +4,7 @@
 	  <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>BloodyMailBox</AssemblyName>
     <Description>Mod for Ticket Admin System</Description>
-    <Version>0.0.1</Version>
+    <Version>0.3.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
@@ -20,8 +20,34 @@
 	  <PackageReference Include="ILMerge.Fody" Version="1.24.0" PrivateAssets="All" />
   </ItemGroup>
 
+	<ItemGroup>
+		<Reference Include="VRising.GameData">
+			<HintPath>VRising.GameData.dll</HintPath>
+			<Private>true</Private>
+		</Reference>
+	</ItemGroup>
+
   <ItemGroup>
     <Folder Include="DB\" />
-    <Folder Include="Utils\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+	<Target Name="CopyDLLsServer" AfterTargets="Build">
+		<Message Text="DLL to V Rising Server" Importance="High" />
+		<Copy SourceFiles="$(TargetDir)$(ProjectName).dll" DestinationFolder="D:\steamcmd\steamapps\common\VRisingDedicatedServer\BepInEx\plugins\" />
+		<Message Text="DLL Server Copied OK" Importance="High" />
+	</Target>
 </Project>

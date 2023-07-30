@@ -1,0 +1,11 @@
+﻿{
+  "name": "BloodyShop",
+  "version_number": "0.3.0",
+  "website_url": "https://github.com/oscarpedrero/BloodyShop",
+  "description": "Mailbox system to receive and send messages to other users.",
+  "dependencies": [
+    "BepInEx-BepInExPack_V_Rising-1.668.5",
+    "deca-Bloodstone-0.1.4",
+    "deca-VampireCommandFramework-0.8.0"
+  ]
+}
