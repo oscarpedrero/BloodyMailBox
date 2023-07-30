@@ -43,7 +43,7 @@ For the correct functioning of this mod you must have the following dependencies
 
 Once the mod installed, a configuration file will be created in the \BepInEx\config server folder where you can activate or desactivate any of the mod notifications.
 
-**Notify.cfg**
+**BloodyMailBox.cfg**
 
 |SECTION|PARAM| DESCRIPTION                                                     | DEFAULT
 |----------------|-------------------------------|-----------------------------------------------------------------|-----------------------------|
