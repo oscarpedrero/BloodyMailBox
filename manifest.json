@@ -1,7 +1,7 @@
 ﻿{
-  "name": "BloodyShop",
+  "name": "BloodyMailBox",
   "version_number": "0.3.0",
-  "website_url": "https://github.com/oscarpedrero/BloodyShop",
+  "website_url": "https://github.com/oscarpedrero/BloodyMailBox",
   "description": "Mailbox system to receive and send messages to other users.",
   "dependencies": [
     "BepInEx-BepInExPack_V_Rising-1.668.5",

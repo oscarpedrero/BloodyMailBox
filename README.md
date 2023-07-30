@@ -34,7 +34,7 @@ For the correct functioning of this mod you must have the following dependencies
 | COMMAND                                          |DESCRIPTION|Example
 |--------------------------------------------------|-------------------------------|-------------------------------|
 | `.mailbox list`   | List of all your messages in the mailbox | `.mailbox list`
-| `.mailbox send <UserNick> "<Message>"`   | List of all your messages in the mailbox | `.mailbox send Trodi "Hello World"`
+| `.mailbox send <UserNick> "<Message>"`   | Send a message to the mailbox of a server user | `.mailbox send Trodi "Hello World"`
 | `.mailbox read <idMessage>`   | Read a certain message from your mailbox, the id to indicate is the number that appears between [ ] when you execute the list command | `.mailbox read 1`
 | `.mailbox delete <idMessage>`   | Delete a certain message from your mailbox, the id to indicate is the number that appears between [ ] when you execute the list command | `.mailbox delete 1`
 | `.mailbox deleteall`   | "Delete all messages from your mailbox | `.mailbox deleteall`
