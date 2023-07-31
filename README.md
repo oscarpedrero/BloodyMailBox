@@ -1,6 +1,9 @@
 
 # BloodyMailBox- Mod Server for V Rising ( Gloomrot update )
 
+![alt text](https://github.com/oscarpedrero/BloodyMailBox/blob/master/Images/image.png?raw=true)
+![alt text](https://github.com/oscarpedrero/BloodyMailBox/blob/master/Images/image-2.png?raw=true)
+
 ## Requirements:
 
 For the correct functioning of this mod you must have the following dependencies installed on your server:
@@ -23,6 +26,9 @@ For the correct functioning of this mod you must have the following dependencies
 
 <details>
 <summary>Changelog</summary>
+
+`0.3.1`
+- Mod stability fix
 
 `0.3.0`
 - First public version of the mod
