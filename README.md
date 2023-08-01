@@ -27,6 +27,9 @@ For the correct functioning of this mod you must have the following dependencies
 <details>
 <summary>Changelog</summary>
 
+`0.3.2`
+- Fix error that makes the mod not work if a user when connecting did not have messages (new or old) it gave an error
+
 `0.3.1`
 - Mod stability fix
 

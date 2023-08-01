@@ -35,6 +35,10 @@ namespace BloodyMailBox.Utils
         public static List<MessageModel> ReadMailBox(string user)
         {
             var jsonUser = Path.Combine(MailBoxPath, user + ".json");
+            if (!File.Exists(jsonUser))
+            {
+                return new List<MessageModel>();
+            }
             string json = File.ReadAllText(jsonUser);
             var messages = JsonSerializer.Deserialize<List<MessageModel>>(json);
 

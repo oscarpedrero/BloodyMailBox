@@ -28,14 +28,17 @@ public class ServerBootstrapSystem_Patch
         var userEntity = serverClient.UserEntity;
 
         var user = GameData.Users.FromEntity(userEntity);
-        _autoLoadTimer = new AutoLoadNewMessages();
-        StartAutoLoad(user);
-
+        if(user != null)
+        {
+            _autoLoadTimer = new AutoLoadNewMessages();
+            StartAutoLoad(user);
+        }
 
     }
 
     private static void StartAutoLoad(UserModel user)
     {
+        var infoUser = user;
         _autoLoadTimer.Start(
             world =>
             {
@@ -70,8 +73,8 @@ public class ServerBootstrapSystem_Patch
                 {
                     var read = message.Open ? "Read" : "Unread";
                     ServerChatUtils.SendSystemMessageToClient(
-                        entityManager, 
-                        (ProjectM.Network.User)user.Internals.User, 
+                        entityManager,
+                        (ProjectM.Network.User)user.Internals.User,
                         FontColorChat.Yellow($"[{FontColorChat.White($"{message.Id}")}][{FontColorChat.White($"{read}")}] Message Author: {FontColorChat.White($"{message.Author}")}")
                         );
                 }
@@ -82,7 +85,7 @@ public class ServerBootstrapSystem_Patch
                 ServerChatUtils.SendSystemMessageToClient(entityManager, (ProjectM.Network.User)user.Internals.User, FontColorChat.Red($"{e.Message}"));
             }
         }
-        if(messages.Count == Plugin.MaxMessages.Value) 
+        if (messages.Count == Plugin.MaxMessages.Value)
             ServerChatUtils.SendSystemMessageToClient(entityManager, (ProjectM.Network.User)user.Internals.User, $"\r\n {FontColorChat.White($"ATTENTION")} \r\n {FontColorChat.Red("Your mailbox is full, delete messages to receive more.")}");
         StopAutoLoad();
     }

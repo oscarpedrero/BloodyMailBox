@@ -1,6 +1,6 @@
 ﻿{
   "name": "BloodyMailBox",
-  "version_number": "0.3.1",
+  "version_number": "0.3.2",
   "website_url": "https://github.com/oscarpedrero/BloodyMailBox",
   "description": "The BloodyMailBox mod for VRising allows users to receive messages and receive notifications of new messages even when they are offline.",
   "dependencies": [
