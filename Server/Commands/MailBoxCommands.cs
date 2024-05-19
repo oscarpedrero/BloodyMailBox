@@ -1,10 +1,10 @@
 ﻿using Bloodstone.API;
+using Bloody.Core;
 using BloodyMailBox.Exceptions;
 using BloodyMailBox.Utils;
 using ProjectM;
 using System.Linq;
 using VampireCommandFramework;
-using VRising.GameData;
 using static RootMotion.FinalIK.InteractionObject;
 
 namespace BloodyMailBox.Server.Commands
@@ -16,7 +16,7 @@ namespace BloodyMailBox.Server.Commands
         [Command("send", usage: "<UserNick> \"<Message>\"", description: "Send a message to the mailbox of a server user", adminOnly: false)]
         public static void SendMail(ChatCommandContext ctx, string name, string message)
         {
-            var user = GameData.Users.All.FirstOrDefault(user => user.CharacterName.ToString().ToLower() == name.ToString().ToLower()) ?? throw ctx.Error($"User {FontColorChat.White($"{name}")} does not exist on this server.");
+            var user = Core.Users.All.FirstOrDefault(user => user.CharacterName.ToString().ToLower() == name.ToString().ToLower()) ?? throw ctx.Error($"User {FontColorChat.White($"{name}")} does not exist on this server.");
 
             if (ctx.User.CharacterName.ToString().ToLower() == name.ToString().ToLower() && !Plugin.OwnMessages.Value) throw ctx.Error("You are not allowed to send messages to yourself.");
 

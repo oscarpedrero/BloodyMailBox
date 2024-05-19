@@ -1,60 +1,31 @@
 ﻿using Bloodstone.API;
 using BloodyMailBox.Utils;
-using HarmonyLib;
 using ProjectM;
 using Stunlock.Network;
 using System.Linq;
-using VRising.GameData;
-using BloodyMailBox.Server.Timer;
-using System;
-using VRising.GameData.Models;
 using BloodyMailBox.Exceptions;
+using Bloody.Core;
+using Bloody.Core.Models;
+using BloodyBoss.Patch;
 
-namespace BloodyMailBox.Patch;
+namespace BloodyMailBox.System;
 
-[HarmonyPatch]
-public class ServerBootstrapSystem_Patch
+public class OnUserOnlineSystem
 {
 
-    private static AutoLoadNewMessages _autoLoadTimer;
-
-    [HarmonyPatch(typeof(ServerBootstrapSystem), nameof(ServerBootstrapSystem.OnUserConnected))]
-    [HarmonyPrefix]
-    public static void Postfix(ServerBootstrapSystem __instance, NetConnectionId netConnectionId)
+    internal static void OnUserOnline(ServerBootstrapSystem sender, NetConnectionId netConnectionId)
     {
-        
-        var userIndex = __instance._NetEndPointToApprovedUserIndex[netConnectionId];
-        var serverClient = __instance._ApprovedUsersLookup[userIndex];
+        var userIndex = sender._NetEndPointToApprovedUserIndex[netConnectionId];
+        var serverClient = sender._ApprovedUsersLookup[userIndex];
         var userEntity = serverClient.UserEntity;
 
-        var user = GameData.Users.FromEntity(userEntity);
-        if(user != null)
+        UserModel userModel = Core.Users.FromEntity(userEntity);
+
+        var action = () =>
         {
-            _autoLoadTimer = new AutoLoadNewMessages();
-            StartAutoLoad(user);
-        }
-
-    }
-
-    private static void StartAutoLoad(UserModel user)
-    {
-        var infoUser = user;
-        _autoLoadTimer.Start(
-            world =>
-            {
-                OnTimedAuto(user);
-            },
-            input =>
-            {
-                if (input is not int secondAutoUIr)
-                {
-                    Plugin.Logger.LogError("Starting timer delay function parameter is not a valid integer");
-                    return TimeSpan.MaxValue;
-                }
-
-                var seconds = 10;
-                return TimeSpan.FromSeconds(seconds);
-            });
+            OnTimedAuto(userModel);
+        };
+        ActionSchedulerPatch.RunActionOnceAfterDelay(action, 10);
     }
 
     private static void OnTimedAuto(UserModel user)
@@ -87,12 +58,7 @@ public class ServerBootstrapSystem_Patch
         }
         if (messages.Count == Plugin.MaxMessages.Value)
             ServerChatUtils.SendSystemMessageToClient(entityManager, (ProjectM.Network.User)user.Internals.User, $"\r\n {FontColorChat.White($"ATTENTION")} \r\n {FontColorChat.Red("Your mailbox is full, delete messages to receive more.")}");
-        StopAutoLoad();
-    }
 
-    public static void StopAutoLoad()
-    {
-        _autoLoadTimer?.Stop();
     }
 
 }

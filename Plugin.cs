@@ -5,10 +5,9 @@ using VampireCommandFramework;
 using BepInEx.Logging;
 using HarmonyLib;
 using System.Reflection;
-using VRising.GameData;
-using Bloodstone.API;
 using Unity.Entities;
-using System.Security.Cryptography.X509Certificates;
+using Bloody.Core.API;
+using BloodyMailBox.System;
 
 namespace BloodyMailBox
 {
@@ -27,13 +26,17 @@ namespace BloodyMailBox
 
         public override void Load()
         {
-            // Plugin startup logic
-            CommandRegistry.RegisterAll();
-            GameData.OnInitialize += GameDataOnInitialize;
-            GameData.OnDestroy += GameDataOnDestroy;
-            InitConfigServer();
+            
             _harmony = new Harmony(MyPluginInfo.PLUGIN_GUID);
             _harmony.PatchAll(Assembly.GetExecutingAssembly());
+
+            // Plugin startup logic
+            CommandRegistry.RegisterAll();
+
+            EventsHandlerSystem.OnInitialize += GameDataOnInitialize;
+            EventsHandlerSystem.OnDestroy += GameDataOnDestroy;
+            InitConfigServer();
+
             Log.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
             
         }
@@ -46,7 +49,7 @@ namespace BloodyMailBox
 
         private static void GameDataOnInitialize(World world)
         {
-            
+            EventsHandlerSystem.OnUserConnected += OnUserOnlineSystem.OnUserOnline;
         }
 
         private static void GameDataOnDestroy()
