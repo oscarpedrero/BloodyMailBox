@@ -27,6 +27,9 @@ For the correct functioning of this mod you must have the following dependencies
 <details>
 <summary>Changelog</summary>
 
+`1.0.1`
+- Bloody.Core dependency removed as dll and added as framework
+
 `1.0.0`
 - Pre-release for use in VRising version 1.0
 

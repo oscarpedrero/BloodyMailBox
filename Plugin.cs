@@ -8,12 +8,14 @@ using System.Reflection;
 using Unity.Entities;
 using Bloody.Core.API;
 using BloodyMailBox.System;
+using Bloody.Core.API.v1;
 
 namespace BloodyMailBox
 {
     [BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
     [BepInDependency("gg.deca.VampireCommandFramework")]
     [BepInDependency("gg.deca.Bloodstone")]
+    [BepInDependency("trodi.Bloody.Core")]
     public class Plugin : BasePlugin
     {
 

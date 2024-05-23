@@ -7,6 +7,8 @@ using BloodyMailBox.Exceptions;
 using Bloody.Core;
 using Bloody.Core.Models;
 using BloodyBoss.Patch;
+using Bloody.Core.Models.v1;
+using Bloody.Core.GameData.v1;
 
 namespace BloodyMailBox.System;
 
@@ -19,7 +21,7 @@ public class OnUserOnlineSystem
         var serverClient = sender._ApprovedUsersLookup[userIndex];
         var userEntity = serverClient.UserEntity;
 
-        UserModel userModel = Core.Users.FromEntity(userEntity);
+        UserModel userModel = GameData.Users.FromEntity(userEntity);
 
         var action = () =>
         {
