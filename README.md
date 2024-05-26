@@ -27,6 +27,9 @@ For the correct functioning of this mod you must have the following dependencies
 <details>
 <summary>Changelog</summary>
 
+`1.0.2`
+- Fixed the bug that created the wrong mailboxes for some users.
+
 `1.0.1`
 - Bloody.Core dependency removed as dll and added as framework
 

@@ -23,7 +23,7 @@ namespace BloodyMailBox.Utils
             var jsonUser = Path.Combine(MailBoxPath, user + ".json");
             if (!File.Exists(jsonUser))
             {
-                File.WriteAllText(jsonUser, "");
+                File.WriteAllText(jsonUser, "[]");
                 return true;
             }
             
@@ -34,16 +34,23 @@ namespace BloodyMailBox.Utils
 
         public static List<MessageModel> ReadMailBox(string user)
         {
-            var jsonUser = Path.Combine(MailBoxPath, user + ".json");
-            if (!File.Exists(jsonUser))
+            try
             {
-                CreateMailBox(user);
+                var jsonUser = Path.Combine(MailBoxPath, user + ".json");
+                if (!File.Exists(jsonUser))
+                {
+                    CreateMailBox(user);
+                    return new List<MessageModel>();
+                }
+                string json = File.ReadAllText(jsonUser);
+                var messages = JsonSerializer.Deserialize<List<MessageModel>>(json);
+
+                return messages;
+            } catch
+            {
                 return new List<MessageModel>();
             }
-            string json = File.ReadAllText(jsonUser);
-            var messages = JsonSerializer.Deserialize<List<MessageModel>>(json);
-
-            return messages;
+            
 
         }
 
