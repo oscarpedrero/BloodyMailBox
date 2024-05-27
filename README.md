@@ -1,5 +1,6 @@
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3K8ENRQY)
 
-# BloodyMailBox- Mod Server for V Rising ( Gloomrot update )
+# BloodyMailBox- Mod Server for V Rising
 
 ![alt text](https://github.com/oscarpedrero/BloodyMailBox/blob/master/Images/image.png?raw=true)
 ![alt text](https://github.com/oscarpedrero/BloodyMailBox/blob/master/Images/image-2.png?raw=true)
