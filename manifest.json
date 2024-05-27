@@ -1,11 +1,12 @@
 ﻿{
   "name": "BloodyMailBox",
-  "version_number": "0.3.2",
+  "version_number": "1.0.2",
   "website_url": "https://github.com/oscarpedrero/BloodyMailBox",
   "description": "The BloodyMailBox mod for VRising allows users to receive messages and receive notifications of new messages even when they are offline.",
   "dependencies": [
     "BepInEx-BepInExPack_V_Rising-1.668.5",
-    "deca-Bloodstone-0.1.4",
-    "deca-VampireCommandFramework-0.8.0"
+    "deca-Bloodstone-0.1.6",
+    "deca-VampireCommandFramework-0.9.0",
+    "Trodi-BloodyCore-1.2.2"
   ]
 }

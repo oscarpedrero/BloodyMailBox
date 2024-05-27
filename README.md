@@ -1,17 +1,20 @@
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3K8ENRQY)
-
 # BloodyMailBox- Mod Server for V Rising
 
 ![alt text](https://github.com/oscarpedrero/BloodyMailBox/blob/master/Images/image.png?raw=true)
 ![alt text](https://github.com/oscarpedrero/BloodyMailBox/blob/master/Images/image-2.png?raw=true)
 
+# Support this project
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3K8ENRQY)
+
 ## Requirements:
 
 For the correct functioning of this mod you must have the following dependencies installed on your server:
 
-- [BepInExPack V Rising ](https://v-rising.thunderstore.io/package/BepInEx/BepInExPack_V_Rising/) 
-- [VRising.VampireCommandFramework](https://v-rising.thunderstore.io/package/deca/VampireCommandFramework/) 
-- [Bloodstone](https://v-rising.thunderstore.io/package/deca/Bloodstone/) 
+1. [BepInEx](https://thunderstore.io/c/v-rising/p/BepInEx/BepInExPack_V_Rising/)
+2. [Bloodstone](https://thunderstore.io/c/v-rising/p/deca/Bloodstone/)
+3. [VampireCommandFramework](https://thunderstore.io/c/v-rising/p/deca/VampireCommandFramework/)
+4. [Bloody.Core](https://thunderstore.io/c/v-rising/p/Trodi/BloodyCore/)
 
 
 ### Actual Features
