@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
 	  <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>BloodyMailBox</AssemblyName>
@@ -12,17 +11,10 @@
 		<PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.668" IncludeAssets="compile" />
 		<PackageReference Include="BepInEx.Core" Version="6.0.0-be.668" IncludeAssets="compile" />
 		<PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
-		<PackageReference Include="BloodyWallet" Version="0.0.9999" />
 		<PackageReference Include="VRising.Unhollowed.Client" Version="1.0.0.*" />
 		<PackageReference Include="VRising.VampireCommandFramework" Version="0.9.*" />
 		<PackageReference Include="VRising.Bloodstone" Version="0.1.*" />
 		<PackageReference Include="Bloody.Core" Version="1.2.*" />
-	</ItemGroup>
-	<ItemGroup>
-		<Reference Include="Bloody.Core">
-			<HintPath>Bloody.Core.dll</HintPath>
-			<Private>true</Private>
-		</Reference>
 	</ItemGroup>
 	<Target Name="CopyDLLsServer" AfterTargets="Build">
 		<Message Text="DLL to V Rising Server" Importance="High" />
