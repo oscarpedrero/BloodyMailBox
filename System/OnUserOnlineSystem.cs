@@ -6,9 +6,9 @@ using System.Linq;
 using BloodyMailBox.Exceptions;
 using Bloody.Core;
 using Bloody.Core.Models;
-using BloodyBoss.Patch;
 using Bloody.Core.Models.v1;
 using Bloody.Core.GameData.v1;
+using Bloody.Core.API.v1;
 
 namespace BloodyMailBox.System;
 
@@ -27,7 +27,7 @@ public class OnUserOnlineSystem
         {
             OnTimedAuto(userModel);
         };
-        ActionSchedulerPatch.RunActionOnceAfterDelay(action, 10);
+        CoroutineHandler.StartGenericCoroutine(action, 10);
     }
 
     private static void OnTimedAuto(UserModel user)

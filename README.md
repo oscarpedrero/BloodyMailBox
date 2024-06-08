@@ -16,6 +16,9 @@ For the correct functioning of this mod you must have the following dependencies
 3. [VampireCommandFramework](https://thunderstore.io/c/v-rising/p/deca/VampireCommandFramework/)
 4. [Bloody.Core](https://thunderstore.io/c/v-rising/p/Trodi/BloodyCore/)
 
+1. ## IMPORTANT NOTE
+
+You must have version 1.2.4 of Bloody.Core installed to be able to use version 1.0.3 or higher of this mod
 
 ### Actual Features
 
@@ -30,6 +33,9 @@ For the correct functioning of this mod you must have the following dependencies
 
 <details>
 <summary>Changelog</summary>
+
+`1.0.3`
+- Updated the timer system through CoroutineHandler.
 
 `1.0.2`
 - Fixed the bug that created the wrong mailboxes for some users.
